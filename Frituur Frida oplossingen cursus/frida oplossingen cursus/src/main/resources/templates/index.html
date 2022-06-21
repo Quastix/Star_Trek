@@ -1,0 +1,75 @@
+<!--Thymeleaf expressies:
+• ${...} Data lezen die je kreeg van de controller.
+            - @PathVariable
+            - attribuutName van een modelAndView
+
+• *{...} Attribuut lezen van een object dat je aangaf met th:object.
+• @{...} URL maken.
+
+• th:text       th:text="${...}", vervangt de tekst tussen een element door de data die je
+                van de controller doorkreeg.
+
+• th:object     th:object="${...}", geeft aan dat je van de data die je van de controller doorkreeg,
+                attributen gaat lezen. Dit wordt in het element en al zijn child elementen toegepast.
+                th:text="*{...}", leest een attribuut van de data in th:object.
+
+• th:each       th:each=" ... : ${...}", itereert over de array die je meegeeft in ${...},
+                ... wordt gedefinieerd als variabele. Later kunnen we die variabele aanspreken mbv.
+                th:text="${...}" om de data van de verschillende elementen van de array voor te stellen.
+
+• th:if       <td><th:block th:if="*{...}">...</th:block></td>, het attribuut na th:if is een boolean.
+              th:if controleert of de waarde true is, als dit zo is zal html het stuk text tussen de
+              elementen tonen.
+
+              The th:if = "${condition}" attribute can evaluate more than simple boolean variables and statements.
+              It will also return true according to these rules:
+
+              If condition is a boolean or statement and true.
+              If condition is a non-zero number or character.
+              If condition is a string that is NOT "false", "off", or "no".
+              If condition is a data type other than a boolean, number, character, or String.
+
+              th:if will evaluate to false whenever condition is null.
+
+• th:block    <th:block></th:block> dient om Thymeleaf attribute toe te passen.
+              De elementen tussen th:block hebben geen nut voor de browser.
+
+• th:href     th:href="@{/...}", bevat de url van de link of bestand dat je wil aanspreken.
+              / staat voor de root URl van je website.
+
+• the:replace th:replace=" ... :: ... ", vervangt het huidige element waar dit in word meegegeven,
+              door het element dat in het bestand aangegeven met de eerste ..., gevolgd door de naam
+              in de laatste ...
+              <nav th:replace="fragments::menu"></nav>
+              Thymeleaf vervangt het huidig <nav> element door het fragment met de naam menu in het
+              bestand fragments(.html).-->
+<!DOCTYPE html>
+<!--Je associert de prefix th met de URI van de Thymeleaf library (http://www.thymeleaf.org)
+ Met de prefixcode neem je later (if, for, text, block, ...) op in de pagina.-->
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<!--th:replace vervangt het head element door het head element van fragments.html met de naam head
+als titel geven we 'Frituur Frida' mee-->
+<head th:replace="fragments::head(title='Frituur Frida')"></head>
+<body>
+<!--th:replace vervangt het nav element door het nav element van fragments.html met de naam menu-->
+<nav th:replace="fragments::menu"></nav>
+<h1>Frituur Frida</h1>
+<!--${toegang} is een modelName van indexController van de functie index, en geeft de tekst open
+of gesloten afhankelijk van welke dag het in de week is-->
+<h2>Frituur Frida is vandaag
+    <th:block th:text="${toegang}"></th:block>
+</h2>
+<h2>Adres</h2>
+<!-- met Th:object geven we aan dat we attributen van het object ${adres} willen lezen
+adres heeft als data een nieuwe class adres-->
+<!--tussen '|' en '|' staan de attributen die we willen uitlezen van de class adres.
+Ze worden daardoor ook op 1 regel weergegeven-->
+<div th:object="${adres}" th:text="|*{straat} *{huisNr} *{gemeente.postcode} *{gemeente.naam}|"></div>
+</body>
+<div>
+    <!--${aantalBeZoeken} heeft als data het aantal bezoeken dat we de website bezocht hebben.
+     We hebben hier een cookie voor aangemaakt zodat de data niet vergeten word door de browser.-->
+    <th:block th:text="${aantalBezoeken}"></th:block>
+    keer bezocht.
+</div>
+</html>

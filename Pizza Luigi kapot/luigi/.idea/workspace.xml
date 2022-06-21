@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="319a1deb-c8fa-4bcc-9352-45c901c52bdf" name="Changes" comment="H28 Dependency injection: Data invoeren via een api en die weergeven in de browser.&#10;&#10;commentaar bij de code schrijven." />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="usePluginRegistry" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="28QccxMM2DaJsrW7Whk1a1quKPw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/svenv/Documents/VDAB/Java/Spring fundamentals/Pizza Luigi kapot/luigi",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors",
+    "spring.configuration.checksum": "e9da82f4c252e7f1745ae88f2624fc07"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\svenv\Documents\VDAB\Java\Spring fundamentals\Luigi\luigi\src\main\resources\static\images" />
+      <recent name="C:\Users\svenv\Documents\VDAB\Java\Spring fundamentals\Luigi\luigi\src\main\resources\static\css" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.FixerKoersClientTest">
+    <configuration name="EuroServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="luigi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.vdab.luigi.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="be.vdab.luigi.services" />
+      <option name="MAIN_CLASS_NAME" value="be.vdab.luigi.services.EuroServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FixerKoersClientTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="luigi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="be.vdab.luigi.restclients.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="be.vdab.luigi.restclients" />
+      <option name="MAIN_CLASS_NAME" value="be.vdab.luigi.restclients.FixerKoersClientTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LuigiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
+      <module name="luigi" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="be.vdab.luigi.LuigiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FixerKoersClientTest" />
+        <item itemvalue="Spring Boot.LuigiApplication" />
+        <item itemvalue="JUnit.EuroServiceTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="319a1deb-c8fa-4bcc-9352-45c901c52bdf" name="Changes" comment="" />
+      <created>1651152338071</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1651152338071</updated>
+      <workItem from="1651152340733" duration="132000" />
+      <workItem from="1651169995549" duration="1437000" />
+      <workItem from="1651210717459" duration="3158000" />
+      <workItem from="1651222198376" duration="319000" />
+      <workItem from="1651222544440" duration="725000" />
+      <workItem from="1651223449166" duration="743000" />
+      <workItem from="1651224419972" duration="3006000" />
+      <workItem from="1651470511306" duration="16156000" />
+      <workItem from="1651640727132" duration="9842000" />
+      <workItem from="1651676079393" duration="2976000" />
+      <workItem from="1651734320249" duration="14829000" />
+      <workItem from="1652173683604" duration="1365000" />
+      <workItem from="1652688165513" duration="476000" />
+      <workItem from="1652688716348" duration="12316000" />
+      <workItem from="1652861710944" duration="2949000" />
+      <workItem from="1652944347989" duration="11466000" />
+      <workItem from="1653049789182" duration="42854000" />
+      <workItem from="1653375330813" duration="14066000" />
+      <workItem from="1653476557042" duration="3043000" />
+      <workItem from="1653838410627" duration="42845000" />
+      <workItem from="1654702341888" duration="213000" />
+    </task>
+    <task id="LOCAL-00001" summary="Intellij programma">
+      <created>1651210729782</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1651210729782</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Intellij programma met htlml file, css file en afbeeldingen">
+      <created>1651211723635</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1651211723635</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Spring bean toepassen">
+      <created>1651471489264</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1651471489264</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Spring bean toepassen met commentaar">
+      <created>1651473088826</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1651473088826</updated>
+    </task>
+    <task id="LOCAL-00005" summary="html en java verbinden via Thymeleaf">
+      <created>1651476121102</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1651476121102</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Thymeleaf: gegevens ophalen met getters">
+      <created>1651483075579</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1651483075579</updated>
+    </task>
+    <task id="LOCAL-00007" summary="th:each itereren over een array&#10;en th:object&#10;aan te geven object dat je wil inlezen">
+      <created>1651508079731</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1651508079731</updated>
+    </task>
+    <task id="LOCAL-00008" summary="th:if enkel gegevens toevoegen die de value true hebben">
+      <created>1651508297940</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1651508297940</updated>
+    </task>
+    <task id="LOCAL-00009" summary="span elementen vervangen door th:block">
+      <created>1651643570736</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1651643570736</updated>
+    </task>
+    <task id="LOCAL-00010" summary="href -&gt; th:href&#10;src -&gt; th:src">
+      <created>1651644293628</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1651644293628</updated>
+    </task>
+    <task id="LOCAL-00011" summary="herhaalde code in html bestanden samenbrengen in fragments.html en van de html-bestanden refereren naar fragments.html">
+      <created>1651651132403</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1651651132403</updated>
+    </task>
+    <task id="LOCAL-00012" summary="met pizza.html verschillende pizzas weergeven die bestaan, als de pizza niet bestaat toon je Pizza niet gevonden">
+      <created>1651676386322</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1651676386322</updated>
+    </task>
+    <task id="LOCAL-00013" summary="code van @GetMapping inkorten met @RequestMapping">
+      <created>1651677160538</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1651677160538</updated>
+    </task>
+    <task id="LOCAL-00014" summary="OScontroller en os.html toevoegen om header User-Agent te controlleren van GET-request">
+      <created>1651742595970</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1651742595970</updated>
+    </task>
+    <task id="LOCAL-00015" summary="H24 Cookie&#10;kleurController en kleuren.html toegevoegd">
+      <created>1652769437600</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1652769437600</updated>
+    </task>
+    <task id="LOCAL-00016" summary="H26 Stateless: bij elke request alle data maken die bij de request hoort.&#10;&#10;commentaar bij de code schrijven.">
+      <created>1653297510141</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1653297510141</updated>
+    </task>
+    <task id="LOCAL-00017" summary="H28 Dependency injection: Data invoeren via een api en die weergeven in de browser.&#10;&#10;commentaar bij de code schrijven.">
+      <created>1653849623176</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1653849623176</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Intellij programma" />
+    <MESSAGE value="Intellij programma met htlml file, css file en afbeeldingen" />
+    <MESSAGE value="Spring bean toepassen" />
+    <MESSAGE value="Spring bean toepassen met commentaar" />
+    <MESSAGE value="html en java verbinden via Thymeleaf" />
+    <MESSAGE value="Thymeleaf: gegevens ophalen met getters" />
+    <MESSAGE value="th:each itereren over een array" />
+    <MESSAGE value="th:each itereren over een array&#10;en th:object&#10;aan te geven object dat je wil inlezen" />
+    <MESSAGE value="th:if enkel gegevens toevoegen die de value true hebben" />
+    <MESSAGE value="span elementen vervangen door th:block" />
+    <MESSAGE value="href -&gt; th:href&#10;src -&gt; th:src" />
+    <MESSAGE value="herhaalde code in html bestanden samenbrengen in fragments.html en van de html-bestanden refereren naar fragments.html" />
+    <MESSAGE value="met pizza.html verschillende pizzas weergeven die bestaan, als de pizza niet bestaat toon je Pizza niet gevonden" />
+    <MESSAGE value="code van @GetMapping inkorten met @RequestMapping" />
+    <MESSAGE value="OScontroller en os.html toevoegen om header User-Agent te controlleren van GET-request" />
+    <MESSAGE value="H24 Cookie&#10;kleurController en kleuren.html toegevoegd" />
+    <MESSAGE value="H26 Stateless: bij elke request alle data maken die bij de request hoort.&#10;&#10;commentaar bij de code schrijven." />
+    <MESSAGE value="H28 Dependency injection: Data invoeren via een api en die weergeven in de browser.&#10;&#10;commentaar bij de code schrijven." />
+    <option name="LAST_COMMIT_MESSAGE" value="H28 Dependency injection: Data invoeren via een api en die weergeven in de browser.&#10;&#10;commentaar bij de code schrijven." />
+  </component>
+</project>
