@@ -43,7 +43,21 @@
               in de laatste ...
               <nav th:replace="fragments::menu"></nav>
               Thymeleaf vervangt het huidig <nav> element door het th:fragment met de naam menu in het
-              bestand fragments(.html).-->
+              bestand fragments(.html).
+
+• th:action     th:action=@{...} het attribuut action van het HTML-element form wordt omgezet naar
+                th:action het geeft aan naar waar de browser het get request
+                verstuurd (url). Als je de form ingeeft wordt de url gevolgd door een QueryString.
+                p98/125 Spring fundamentals.
+
+• th:field      th:field=*{...}  verwijst naar het ... attribuut (membervariabele) van het form object
+                Thymeleaf stuurt HTML met volgend <input...> element naar de browser:
+                <input id="naam membervariabele" name="naam membervariabele"
+                value="waarde toegekend in de controller" autofocus>
+
+• th:error      the:error=*{...} laat foutmeldingen zien die plaatsvinden.
+                We vervangen de foutmelding die java werpt door een eigen geschreven tekst in
+                het bestand messages.properties-->
 <!DOCTYPE html>
 <!--Je associert de prefix th met de URI van de Thymeleaf library (http://www.thymeleaf.org)
  Met de prefixcode neem je later (if, for, text, block, ...) op in de pagina.-->
