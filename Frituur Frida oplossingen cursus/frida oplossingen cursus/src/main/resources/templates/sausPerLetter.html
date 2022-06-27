@@ -2,6 +2,7 @@
 • ${...} Data lezen die je kreeg van de controller.
             - @PathVariable
             - attribuutName van een modelAndView
+            - lezen van een variabele van een iteratie over een data array van een controller (th:each)
 
 • *{...} Attribuut lezen van een object dat je aangaf met th:object.
 • @{...} URL maken.
@@ -37,12 +38,26 @@
 • th:href     th:href="@{/...}", bevat de url van de link of bestand dat je wil aanspreken.
               / staat voor de root URl van je website.
 
-• the:replace th:replace=" ... :: ... ", vervangt het huidige element waar dit in word meegegeven,
+• th:replace th:replace=" ... :: ... ", vervangt het huidige element waar dit in word meegegeven,
               door het element dat in het bestand aangegeven met de eerste ..., gevolgd door de naam
               in de laatste ...
               <nav th:replace="fragments::menu"></nav>
-              Thymeleaf vervangt het huidig <nav> element door het fragment met de naam menu in het
-              bestand fragments(.html).-->
+              Thymeleaf vervangt het huidig <nav> element door het th:fragment met de naam menu in het
+              bestand fragments(.html).
+
+• th:action     th:action=@{...} het attribuut action van het HTML-element form wordt omgezet naar
+                th:action het geeft aan naar waar de browser het get request
+                verstuurd (url). Als je de form ingeeft wordt de url gevolgd door een QueryString.
+                p98/125 Spring fundamentals.
+
+• th:field      th:field=*{...}  verwijst naar het ... attribuut (membervariabele) van het form object
+                Thymeleaf stuurt HTML met volgend <input...> element naar de browser:
+                <input id="naam membervariabele" name="naam membervariabele"
+                value="waarde toegekend in de controller" autofocus>
+
+• th:error      the:error=*{...} laat foutmeldingen zien die plaatsvinden.
+                We vervangen de foutmelding die java werpt door een eigen geschreven tekst in
+                het bestand messages.properties-->
 
 
 <!--Mijn oplossing oef 1.16 alfabet

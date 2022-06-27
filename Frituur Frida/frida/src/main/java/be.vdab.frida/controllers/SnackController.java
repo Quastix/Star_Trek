@@ -1,7 +1,9 @@
 package be.vdab.frida.controllers;
 
+import be.vdab.frida.forms.ZoekSnackForm;
 import be.vdab.frida.services.SnackService;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -71,13 +73,41 @@ public class SnackController {
     // Het vraagt data op.
     // url: /dagverkopen
     @GetMapping("dagverkopen")
-    // Er worden 3 parameters ingegeven in het return-object
-    // Parameter 1: De naam van de Thymeleaf pagina terug. Je typt de extensie (.html) niet
-    // Parameter 2: De naam waaronder je een stukje data doorgeeft, dit wordt ook gebruikt
-    //              in de Thymeleaf pagina index.
-    // Parameter 3: De inhoud van de variabele zelf.
-    public ModelAndView findDagverkopen(){
+    public ModelAndView findDagverkopen() {
+        // Er worden 3 parameters ingegeven in het return-object
+        // Parameter 1: De naam van de Thymeleaf pagina terug. Je typt de extensie (.html) niet
+        // Parameter 2: De naam waaronder je een stukje data doorgeeft, dit wordt ook gebruikt
+        //              in de Thymeleaf pagina index.
+        // Parameter 3: De inhoud van de variabele zelf.
         return new ModelAndView("dagverkopen", "dagverkopen", snackService.findDagVerkopen());
+    }
+
+    // Onderstaande method voert een get method uit.
+    // Het vraagt data op.
+    // url: /zoeksnack/form
+    @GetMapping("zoeksnack/form")
+    public ModelAndView zoekSnackForm() {
+        // Er worden 3 parameters ingegeven in het return-object
+        // Parameter 1: De naam van de Thymeleaf pagina terug. Je typt de extensie (.html) niet
+        // Parameter 2: De naam waaronder je een stukje data doorgeeft, dit wordt ook gebruikt
+        //              in de Thymeleaf pagina index.
+        // Parameter 3: De inhoud van de variabele zelf.
+        return new ModelAndView("zoeksnack")
+                .addObject("zoekSnackForm", new ZoekSnackForm(null));
+    }
+
+    // Het vraagt data op.
+    // url: /zoeksnack
+    @GetMapping("zoeksnack")
+    public ModelAndView zoekSnack(ZoekSnackForm form) {
+        // Er worden 3 parameters ingegeven in het return-object
+        // Parameter 1: De naam van de Thymeleaf pagina terug. Je typt de extensie (.html) niet
+        // Parameter 2: De naam waaronder je een stukje data doorgeeft, dit wordt ook gebruikt
+        //              in de Thymeleaf pagina index.
+        // Parameter 3: De inhoud van de variabele zelf.
+        return new ModelAndView("zoeksnack")
+                .addObject("snacks",
+                snackService.findByBeginNaam(form.beginletters()));
     }
 
 }

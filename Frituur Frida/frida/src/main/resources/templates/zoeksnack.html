@@ -58,46 +58,38 @@
 • th:error      the:error=*{...} laat foutmeldingen zien die plaatsvinden.
                 We vervangen de foutmelding die java werpt door een eigen geschreven tekst in
                 het bestand messages.properties-->
-
 <!DOCTYPE html>
 <!--Je associert de prefix th met de URI van de Thymeleaf library (http://www.thymeleaf.org)
  Met de prefixcode neem je later (if, for, text, block, ...) op in de pagina.-->
 <html lang="nl" xmlns:th="http://www.thymeleaf.org">
-<!--het head element wordt vervangen door het head element in fragments.html
-we geven 'Saus alfabet' mee als titel-->
-<head th:replace="fragments::head(title='Saus alfabet')"></head>
+<!--th:replace vervangt het head element met het head element van fragments.html met als onderwerpt head
+We geven als titel 'taal' mee door-->
+<head th:replace="fragments::head(title='Snack zoeken')"></head>
 <body>
-<!--het nav element wordt vervangen door het nav element in fragments.html-->
+<!--th:replace vervangt het nav element met het nav element van fragments.html met als onderwerpt menu-->
 <nav th:replace="fragments::menu"></nav>
-<h1>Alfabet</h1>
-<!--met class spreken we css aan om ervoor te zorgen dat de letters naast elkaar staan ipv onder elkaar-->
-<ul class ="naastMekaar">
-    <!--we iteren met th:each over de data van ${alfabet}, de data is een array van letters
-    eenLetter wordt een aanspreekbare variabele met ${...} in het element li-->
-    <li th:each="eenLetter:${alfabet}">
-        <!--er wordt voor elke letter van de array alfabet een link aangemaakt die tekst van de letter
-        bevat-->
-        <a th:href="@{/sauzen/alfabet/{letter}(letter=${eenLetter})}"
-           th:text="${eenLetter}"></a>
-    </li>
-</ul>
-<!--${booleanLetter} heeft al data een boolean dit wordt bepaald dankzij een if functie in
-SauzenController.java onder de functie findByBeginNaam.
-Als de letter een letter van het alfabet is heeft de boolean de waarde true-->
-<th:block th:if="${booleanLetter}">
+<h1>Snack zoeken</h1>
+<!--Kreeg een foutmelding omdat de verwijzing van th:object="${zoekSnackForm}"
+ naar SnackController zoekSnackForm() de attribute naam van de ModelAndView
+ in kleine letters stond ik had zoeksnackform getypt terwijl het zoekSnackForm
+ moest zijn-->
+<form th:object="${zoekSnackForm}" method="get" th:action="@{/snacks/zoeksnack}">
+    <label>Beginletters:
+        <input th:field="*{beginletters}" autofocus>
+    </label>
+    <button>Zoeken</button>
+</form>
+<th:block th:if="${snacks}">
     <!--we plaatsen de waarde van de path variabele tussen de tekst-->
-    <h2>Sauzen die beginnen met <th:block th:text="${letter}"></th:block>:</h2>
-    <!--${sauzen} is een stream van alle sauzen die beginnen met de letter van de path variabele
+    <h2>Snacks die beginnen met
+        <th:block th:text="${zoekSnackForm.beginletters()}"></th:block>
+        :
+    </h2>
+    <!--${sauzen} is een stream van alle snacks die beginnen met de letter van de path variabele
      van die sauzen vragen we om de naam in een lijst te zetten.-->
-    <ul><li th:each="saus:${sauzen}" th:text="${saus.naam}"></li></ul>
-</th:block>
-<!--${booleanLetter} heeft al data een boolean dit wordt bepaald dankzij een if functie in
-SauzenController.java onder de funcite findByBeginNaam.
-Als de letter een letter van het alfabet is heeft de boolean de waarde true
-th:unless controleert of de waarde van de boolean false is.-->
-<th:block th:unless="${booleanLetter}">
-    <!--we plaatsen de waarde van de path variabele tussen de tekst-->
-    <h2>Het symbool ' <th:block th:text="${letter}"></th:block> ' is geen onderdeel van het alfabet.</h2>
+    <ul>
+        <li th:each="snack:${snacks}" th:text="${snack.naam()}"></li>
+    </ul>
 </th:block>
 </body>
 </html>
