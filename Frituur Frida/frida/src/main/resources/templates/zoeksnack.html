@@ -75,7 +75,8 @@ We geven als titel 'taal' mee door-->
  moest zijn-->
 <form th:object="${zoekSnackForm}" method="get" th:action="@{/snacks/zoeksnack}">
     <label>Beginletters:
-        <input th:field="*{beginletters}" autofocus>
+        <span th:errors="*{beginletters}"></span>
+        <input th:field="*{beginletters}" autofocus type="text" required minlength="1">
     </label>
     <button>Zoeken</button>
 </form>

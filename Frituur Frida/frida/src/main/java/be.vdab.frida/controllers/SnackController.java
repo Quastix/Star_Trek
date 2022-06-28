@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
+
 // @Controller zorgt ervoor dat Spring een bean van de class maakt.
 // Een bean is een Java object waar Spring handelingen op kan uitvoeren.
 @Controller
@@ -98,15 +100,22 @@ public class SnackController {
 
     // Het vraagt data op.
     // url: /zoeksnack
+
+    // Bean validation valideert bij de validatie van een ZoekSnackForm
+    // en controleert of de waarden van en tot geen null (niets) bevatten en
+    // meer dan alleen spaties bevat.
     @GetMapping("zoeksnack")
-    public ModelAndView zoekSnack(ZoekSnackForm form) {
+    public ModelAndView zoekSnack(@Valid ZoekSnackForm form, Errors errors) {
         // Er worden 3 parameters ingegeven in het return-object
         // Parameter 1: De naam van de Thymeleaf pagina terug. Je typt de extensie (.html) niet
         // Parameter 2: De naam waaronder je een stukje data doorgeeft, dit wordt ook gebruikt
         //              in de Thymeleaf pagina index.
         // Parameter 3: De inhoud van de variabele zelf.
-        return new ModelAndView("zoeksnack")
-                .addObject("snacks",
+        var modelAndView = new ModelAndView("zoeksnack");
+        if (errors.hasErrors()) {
+            return modelAndView;
+        }
+        return modelAndView.addObject("snacks",
                 snackService.findByBeginNaam(form.beginletters()));
     }
 
