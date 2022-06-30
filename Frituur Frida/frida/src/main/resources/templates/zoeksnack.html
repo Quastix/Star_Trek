@@ -89,7 +89,9 @@ We geven als titel 'taal' mee door-->
     <!--${sauzen} is een stream van alle snacks die beginnen met de letter van de path variabele
      van die sauzen vragen we om de naam in een lijst te zetten.-->
     <ul>
-        <li th:each="snack:${snacks}" th:text="${snack.naam()}"></li>
+        <li th:each="snack:${snacks}">
+            <a th:text="${snack.naam()}" th:href="@{/snacks/updatesnack/form/{id}(id=${snack.id()})}"></a>
+        </li>
     </ul>
 </th:block>
 </body>

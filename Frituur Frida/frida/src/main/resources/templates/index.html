@@ -48,7 +48,7 @@
 • th:action     th:action=@{...} het attribuut action van het HTML-element form wordt omgezet naar
                 th:action het geeft aan naar waar de browser het get request
                 verstuurd (url). Als je de form ingeeft wordt de url gevolgd door een QueryString.
-                p98/125 Spring fundamentals.
+                p98/125 Spring fundamentals. th
 
 • th:field      th:field=*{...}  verwijst naar het ... attribuut (membervariabele) van het form object
                 Thymeleaf stuurt HTML met volgend <input...> element naar de browser:
@@ -68,6 +68,19 @@ als titel geven we 'Frituur Frida' mee-->
 <body>
 <!--th:replace vervangt het nav element door het nav element van fragments.html met de naam menu-->
 <nav th:replace="fragments::menu"></nav>
+<!--extra info RedirectAttributes-->
+<div th:if="${param.snackNieuwId}" class="boodschap">Snack aangepast:</div>
+<div th:if="${param.snackNieuwId}" class="boodschap">Oude gegevens: Id: <th:block
+        th:text="${param.snackOudId}"></th:block>, Naam: <th:block
+        th:text="${param.snackOudNaam}"></th:block>, Prijs: <th:block
+        th:text="${param.snackOudPrijs}"></th:block></div>
+<div th:if="${param.snackNieuwId}" class="boodschap">Nieuwe gegevens: Id: <th:block
+        th:text="${param.snackNieuwId}"></th:block>, Naam: <th:block
+        th:text="${param.snackNieuwNaam}"></th:block>, Prijs: <th:block
+        th:text="${param.snackNieuwPrijs}"></th:block></div>
+<!--extra info RedirectAttributes-->
+<div th:if="${param.snackNieuwGevonden}" class="fout">Snack met nummer <th:block
+th:text="${param.snackNietGevonden}"></th:block> niet gevonden om up te daten.</div>
 <h1>Frituur Frida</h1>
 <!--${toegang} is een modelName van indexController van de functie index, en geeft de tekst open
 of gesloten afhankelijk van welke dag het in de week is-->

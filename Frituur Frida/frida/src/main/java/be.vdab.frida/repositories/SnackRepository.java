@@ -72,7 +72,6 @@ public class SnackRepository {
             // Optional terug.
             return Optional.empty();
         }
-
     }
 
     // Method om de gegevens van een snack te wijzigen adhv id

@@ -64,35 +64,24 @@
 <html lang="nl" xmlns:th="http://www.thymeleaf.org">
 <!--het head element wordt vervangen door het head element in fragments.html
 we geven 'Saus alfabet' mee als titel-->
-<head th:replace="fragments::head(title='Snack alfabet')"></head>
+<head th:replace="fragments::head(title='Snack updaten')"></head>
 <body>
 <!--het nav element wordt vervangen door het nav element in fragments.html-->
 <nav th:replace="fragments::menu"></nav>
-<h1>Snack alfabet</h1>
-<!--met class spreken we css aan om ervoor te zorgen dat de letters naast elkaar staan ipv onder elkaar-->
-<ul class ="naastMekaar">
-    <!--we iteren met th:each over de data van ${alfabet}, de data is een array van letters
-    eenLetter wordt een aanspreekbare variabele met ${...} in het element li-->
-    <li th:each="eenLetter:${alfabet}">
-        <!--er wordt voor elke letter van de array alfabet een link aangemaakt die tekst van de letter
-        bevat-->
-        <a th:href="@{/snacks/alfabet/{letter}(letter=${eenLetter})}"
-           th:text="${eenLetter}"></a>
-    </li>
-</ul>
-<!--${booleanLetter} heeft al data een boolean dit wordt bepaald dankzij een if functie in
-SnackController.java onder de functie findByBeginNaam.
-Als de letter een letter van het alfabet is heeft de boolean de waarde true-->
-<th:block>
-    <!--we plaatsen de waarde van de path variabele tussen de tekst-->
-    <h2>Snacks die beginnen met <th:block th:text="${letter}"></th:block>:</h2>
-    <!--${sauzen} is een stream van alle snacks die beginnen met de letter van de path variabele
-     van die sauzen vragen we om de naam in een lijst te zetten.-->
-    <ul>
-        <li th:each="snack:${snacks}">
-            <a th:text="${snack.naam()}" th:href="@{/snacks/updatesnack/form/{id}(id=${snack.id()})}"></a>
-        </li>
-    </ul>
-</th:block>
+<h1>Snack wijzigen</h1>
+<form th:object="${snack}" method="post" th:action="@{/snacks}">
+    <label>Nieuwe naam:
+        <span th:errors="*{naam}"></span>
+        <input th:field="*{naam}" autofocus type="text" required minlength="1">
+    </label>
+    <label>Nieuwe prijs:
+        <span th:errors="*{prijs}"></span>
+        <input th:field="*{prijs}" type="number" required min="0" step="0.01">
+    </label>
+    <input type="hidden" name="id" th:value="*{id}">
+    <button>Opslaan</button>
+</form>
+
 </body>
+<script th:src="@{/js/preventDoubleSubmit.js}" defer></script>
 </html>
