@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head(title='Welkom')"></head>
+<body>
+<h1>Werknemers</h1>
+<table>
+    <tbody>
+    <tr th:each="werknemer : ${werknemers}" th:object="${werknemer}">
+        <td><a th:text="|*{voornaam} *{familienaam}|" th:href="@{/werknemer/{id}(id=*{id})}"></a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

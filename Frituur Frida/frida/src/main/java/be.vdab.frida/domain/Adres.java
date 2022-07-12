@@ -1,5 +1,7 @@
 package be.vdab.frida.domain;
 
+import java.math.BigDecimal;
+
 public class Adres {
     private final String straat;
     private final String huisNr;

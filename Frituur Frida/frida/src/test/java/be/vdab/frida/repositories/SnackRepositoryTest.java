@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 import java.math.BigDecimal;
 
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 // @JdbcTest maakt een IOC-container met een DataSource bean ten dienste van de test.
 // Focust enkel op JDBC-gebaseerde componenten.
@@ -53,7 +53,7 @@ public class SnackRepositoryTest
         // Je base class bevat een variabele jdbcTemplate, van het type JdbcTemplate.
         // Je voert daarmee SQL statements uit in je test.
         // Je zoekt hier de id van de eerste snack die je maakte in insertSnacks.sql.
-        return jdbcTemplate.queryForObject("select id from snacks where naam = 'test'", long.class);
+        return jdbcTemplate.queryForObject("select id from snacks where naam = 'test'", Long.class);
     }
 
     @Test
@@ -86,22 +86,23 @@ public class SnackRepositoryTest
                 () -> repository.update(new Snack(-1, "test", BigDecimal.TEN)));
     }
 
-    /*@Test
+    @Test
     void findByBeginNaam() {
         assertThat(repository.findByBeginNaam("t"))
                 .hasSize(countRowsInTableWhere(SNACKS, "naam like 't%'"))
                 .extracting(Snack::naam)
                 .allSatisfy(naam -> assertThat(naam.toLowerCase())
                         .startsWith("t")).isSortedAccordingTo(String::compareToIgnoreCase);
-    }*/
+    }
 
-    /*@Test
+    @Test
     void findVerkochtAantalPerSnack() {
         var verkochteAantallenPerSnack = repository.findDagverkopen();
         assertThat(verkochteAantallenPerSnack).hasSize(countRowsInTable(SNACKS));
         var rij1 = verkochteAantallenPerSnack.get(0);
-        assertThat(rij1.totaalAantal()).isEqualTo(jdbcTemplate.queryForObject("select sum(aantal) from dagVerkopen where snackId = " + rij1.id(), Integer.class));
-    }*/
+        assertThat(rij1.totaalAantal())
+                .isEqualTo(jdbcTemplate.queryForObject("select sum(aantal) from dagVerkopen where snackId = " + rij1.id(), Integer.class));
+    }
 
 
 }

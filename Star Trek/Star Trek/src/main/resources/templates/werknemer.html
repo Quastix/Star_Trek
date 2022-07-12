@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head(title='Werknemer')"></head>
+<body>
+<div th:if="not ${werknemer}" class="fout">Werknemer niet gevonden met nummer:
+    <th:block th:text="${id}"></th:block>
+</div>
+<div th:if="${param.budgetOverschreden}" class="fout">onvoldoende budget.</div>
+<th:block th:if="${werknemer}" th:object="${werknemer}">
+    <h1 th:text="|*{voornaam} *{familienaam}|"></h1>
+    <dl>
+        <img th:src="@{/images/{id}.jpg(id=*{id})}"
+             th:alt="*{id}">
+        <dt>Nummer</dt>
+        <dd th:text="*{id}"></dd>
+        <dt>Budget</dt>
+        <dd th:text="*{{budget}}"></dd>
+    </dl>
+</th:block>
+<a th:href="@{/werknemer/bestelling/{id}(id=*{id})}">Vorige bestellingen</a>
+<a th:href="@{/werknemer/nieuwebestelling/form/{id}(id=*{id})}">Nieuwe Bestellingen</a>
+<a th:href="@{/}">Startpagina</a>
+</body>
+</html>

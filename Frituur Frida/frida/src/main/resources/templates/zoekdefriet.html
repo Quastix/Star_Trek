@@ -58,33 +58,41 @@
 • th:error      the:error=*{...} laat foutmeldingen zien die plaatsvinden.
                 We vervangen de foutmelding die java werpt door een eigen geschreven tekst in
                 het bestand messages.properties-->
-
+<!DOCTYPE html>
 <!--Je associert de prefix th met de URI van de Thymeleaf library (http://www.thymeleaf.org)
  Met de prefixcode neem je later (if, for, text, block, ...) op in de pagina.-->
-<div xmlns:th="http://www.thymeleaf.org">
-    <!--Je geeft elke fragment een unieke naam met th:fragment. Dit fragment heet menu.-->
-    <!--navigatie menu bovenaan de website-->
-    <nav th:fragment="menu">
-        <ul>
-            <!--th:href maakt  met@{/} een  url naar de root van de website-->
-            <li><a th:href="@{/}">Welkom</a></li>
-            <li><a th:href="@{/sauzen}">Sauzen</a></li>
-            <li><a th:href="@{/talen}">Taal</a></li>
-            <li><a th:href="@{/sauzen/alfabet}">Sauzen op alfabet</a></li>
-            <li><a th:href="@{/snacks/alfabet}">Snacks op alfabet</a></li>
-            <li><a th:href="@{/snacks/dagverkopen}">Dagverkopen</a></li>
-            <li><a th:href="@{/snacks/zoeksnack/form}">Snacks zoeken</a></li>
-            <li><a th:href="@{/snacks/zoekdefriet}">Zoek de friet</a></li>
-        </ul>
-    </nav>
-    <!-- th:fragment heeft de naam head en er kan bij het aanspreken hiervan een titel worden
-    meegeven-->
-    <head th:fragment="head(title)">
-        <!--frida.ico laat het icoontje in het tabblad boven in de browser tonen.-->
-        <link rel="icon" th:href="@{/images/frida/ico}" type="image/x-icon">
-        <!--Je gebruikt de inhoud van de parameter title. Ingegeven in <head ...> -->
-        <title th:text="${title}"></title>
-        <!-- th:href bevat de css pagina die we gaan gebruiken -->
-        <link rel="stylesheet" th:href="@{/css/frida.css}">
-    </head>
-</div>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<!--th:replace vervangt het head element met het head element van fragments.html met als onderwerpt head
+We geven als titel 'taal' mee door-->
+<head th:replace="fragments::head(title='Zoek De friet')"></head>
+<body>
+<!--th:replace vervangt het nav element met het nav element van fragments.html met als onderwerpt menu-->
+<nav th:replace="fragments::menu"></nav>
+<h1>Zoek de friet</h1>
+<form th:object="${zoekDeFriet}" method="get" th:action="@{/zoekdefriet}">
+    <button name="index" value="1">
+        <img th:src=”@{/images/deurtoe.png}" alt="deur toe">
+    </button>
+    <button name="index" value="2">
+        <img th:src=”@{/images/deurtoe.png}" alt="deur toe">
+    </button>
+    <button name="index" value="3">
+        <img th:src=”@{/images/deurtoe.png}" alt="deur toe">
+    </button>
+    <button name="index" value="4">
+        <img th:src=”@{/images/deurtoe.png}" alt="deur toe">
+    </button>
+    <button name="index" value="5">
+        <img th:src=”@{/images/deurtoe.png}" alt="deur toe">
+    </button>
+    <button name="index" value="6">
+        <img th:src=”@{/images/deurtoe.png}" alt="deur toe">
+    </button>
+    <button name="index" value="7">
+        <img th:src=”@{/images/deurtoe.png}" alt="deur toe">
+    </button>
+    <button>Nieuw spel</button>
+</form>
+
+</body>
+</html>
